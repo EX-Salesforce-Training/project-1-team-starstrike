@@ -1,12 +1,12 @@
 public class TrackingCodeController {
     public Mail__c trackMail {get; set;}
     public String mailCode {get; set;}
+    
     public String searchMessage {get; set;}
     public Boolean showFields {get; set;}
     public Boolean showMessage {get; set;}
     
     public TrackingCodeController() {
-        //trackMail = new Mail__c();
         showFields = false;
         showMessage = false;
     }
@@ -37,7 +37,7 @@ public class TrackingCodeController {
         }
         
         if(showFields == false && showMessage == false) {
-            searchMessage = 'No package not found';
+            searchMessage = 'No package found';
             showMessage = true;
         }
     }
