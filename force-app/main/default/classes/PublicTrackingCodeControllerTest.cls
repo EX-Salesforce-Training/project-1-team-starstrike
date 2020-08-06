@@ -1,5 +1,5 @@
 @isTest
-public class TrackingCodeControllerTest { 
+public class PublicTrackingCodeControllerTest { 
 
     @testSetup
     public static void TestSetupMethod() {
@@ -60,15 +60,15 @@ public class TrackingCodeControllerTest {
     }
     
     @isTest
-    public static void TestTrackingCodeControllerConstructor() {
-        TrackingCodeController testController = new TrackingCodeController();
+    public static void TestPublicTrackingCodeControllerConstructor() {
+        PublicTrackingCodeController testController = new PublicTrackingCodeController();
         System.assert(!testController.showFields);
         System.assert(!testController.showMessage);
     }
     
     @isTest
     public static void TestSearchCode() {
-        TrackingCodeController testController = new TrackingCodeController();
+        PublicTrackingCodeController testController = new PublicTrackingCodeController();
         
         // Input invalid tracking code
         testController.mailCode = 'asdfasdf';
@@ -97,42 +97,6 @@ public class TrackingCodeControllerTest {
         System.assert(!testController.showFields);
         System.assert(testController.showMessage);
         System.assertEquals('No package found', testController.searchMessage);
-    }
-    
-    @isTest
-    public static void RunAsTest() {
-        String uName = 'user' + Datetime.now().getTime() + '@mushi.com';
-        Profile p = [SELECT id 
-                    FROM Profile
-                    WHERE Name='Standard User'];
-        User u = new User(Alias = 'testUser', Email='testuser@mushi.com',
-                          EmailEncodingKey='UTF-8', LastName = 'Test', LanguageLocaleKey='en_us',
-                          TimezoneSidKey='america/new_york', LocaleSidKey='en_us', 
-                          ProfileId=p.id, Username=uName);
-        
-        System.runAs(u) {
-            System.debug(UserInfo.getUserId());
-            System.debug(UserInfo.getUserName());
-            
-            // Test constructor
-            TrackingCodeController testController = new TrackingCodeController();
-            System.assert(!testController.showFields);
-            System.assert(!testController.showMessage);
-            
-            // Test SearchCode()            
-            List<Mail__c> createdMail = [SELECT Name, Id, Delivery_Status__c, Height__c, Weight__c, Width__c, Contact_Address__c, Contact_Address__r.Address__c, 
-                      Contact_Address__r.Address__r.Address_Line_1__c, Contact_Address__r.Address__r.Address_Line_2__c, 
-                      Contact_Address__r.Address__r.City__c, Contact_Address__r.Address__r.Postal_Zip_Code__c, 
-                      Contact_Address__r.Address__r.State__c FROM Mail__c
-                      WHERE (Contact_Address__r.Address__r.Address_Line_1__c='12 Ripper St.' AND Contact_Address__r.Address__r.City__c='London')];
-            System.assert(createdMail.isEmpty());
-            
-            testController.mailCode = '123123123123123';
-            testController.SearchCode();
-            System.assert(!testController.showFields);
-            System.assert(testController.showMessage);
-            
-        }
     }
     
 }

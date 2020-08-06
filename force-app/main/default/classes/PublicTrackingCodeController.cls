@@ -1,4 +1,4 @@
-public with sharing class TrackingCodeController {
+public without sharing class PublicTrackingCodeController {
     public Mail__c trackMail {get; set;}
     public String mailCode {get; set;}
     
@@ -6,7 +6,7 @@ public with sharing class TrackingCodeController {
     public Boolean showFields {get; set;}
     public Boolean showMessage {get; set;}
     
-    public TrackingCodeController() {
+    public PublicTrackingCodeController() {
         showFields = false;
         showMessage = false;
     }
