@@ -1,0 +1,17 @@
+<apex:page controller="PublicTrackingCodeController">
+    <apex:form >
+    	<apex:pageBlock title="Tracking Information">
+            <apex:inputText value="{!mailCode}"/>
+            <apex:commandButton action="{!SearchCode}" value="Search" rerender="infoSection" /><br />
+            <apex:pageBlockSection columns="1" id="infoSection" >
+                <apex:outputText value="{!searchMessage}" rendered="{!showMessage}" />
+                <apex:outputField value="{!trackMail.Name}" label="Mail" rendered="{!showFields}" />
+                <apex:outputField value="{!trackMail.Id}" label="Tracking Code" rendered="{!showFields}" />
+                <apex:outputField value="{!trackMail.Delivery_Status__c}" rendered="{!showFields}" />
+                <apex:outputField value="{!trackMail.Weight__c}" rendered="{!showFields}" />
+                <apex:outputField value="{!trackMail.Height__c}" rendered="{!showFields}" />
+                <apex:outputField value="{!trackMail.Width__c}" rendered="{!showFields}" />                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
