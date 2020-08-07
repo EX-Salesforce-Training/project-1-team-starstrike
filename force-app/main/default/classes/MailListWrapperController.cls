@@ -1,4 +1,4 @@
-public class MailListWrapperController {
+public with sharing class MailListWrapperController {
     public List<Wrapper> masterList {get; set;}
 	public List<Wrapper> mailList {get; set;}
     public Mail__c sample {get; set;}
