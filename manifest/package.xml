@@ -13,6 +13,14 @@
         <name>CustomObject</name>
     </types>
     <types>
+        <members>Case</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Flow</name>
+    </types>
+    <types>
         <members>*</members>
         <name>Profile</name>
     </types>
