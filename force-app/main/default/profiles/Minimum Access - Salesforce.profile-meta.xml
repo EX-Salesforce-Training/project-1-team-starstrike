@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <classAccesses>
+        <apexClass>CreateTicketController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>UserAccountController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -498,6 +502,10 @@
     </layoutAssignments>
     <pageAccesses>
         <apexPage>AccountInfomation</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>CreateTicket</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
     <recordTypeVisibilities>
