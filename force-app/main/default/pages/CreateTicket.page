@@ -1,0 +1,78 @@
+<apex:page controller="CreateTicketController" lightningStylesheets="true">
+    <apex:slds/>
+    <div class="slds-scope">
+        <apex:form>
+            <apex:pageBlock>
+                <apex:panelGrid columns="4">
+                        <apex:pageBlockSection columns="1">
+                            <apex:pageBlockSectionItem id="contact">
+                                <apex:outputLabel value="Contact Name: " styleClass="slds-form-element__label"/>
+                             </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem dataStyleClass="slds-form-element">
+                                <apex:inputField value="{!newCase.Contact.Name}" styleClass="slds-input" style="pointer-events:none;"/>
+                             </apex:pageBlockSectionItem> 
+                        </apex:pageBlockSection>
+
+                        <apex:pageBlockSection columns="1">
+                            <apex:pageBlockSectionItem id="account">
+                                <apex:outputLabel value="Account Name: " styleClass="slds-form-element__label"/>
+                             </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem dataStyleClass="slds-form-element">
+                                <apex:inputField value="{!newCase.Account.Name}" styleClass="slds-input" style="pointer-events:none;"/>
+                             </apex:pageBlockSectionItem>                              
+                        </apex:pageBlockSection>
+                </apex:panelGrid>
+                <apex:panelGrid columns="4">
+                        <apex:pageBlockSection columns="1">
+                            <apex:pageBlockSectionItem id="contact">
+                                <apex:outputLabel value="Type: " styleClass="slds-form-element__label"/>
+                             </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem dataStyleClass="slds-form-element">
+                                <apex:selectList value="{!newCase.Type}" styleClass="slds-input"/>
+                             </apex:pageBlockSectionItem> 
+                        </apex:pageBlockSection>
+
+                        <apex:pageBlockSection columns="1">
+                            <apex:pageBlockSectionItem id="account">
+                                <apex:outputLabel value="Priority: " styleClass="slds-form-element__label"/>
+                             </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem dataStyleClass="slds-form-element">
+                                <apex:selectList value="{!newCase.Priority}" styleClass="slds-input"/>
+                             </apex:pageBlockSectionItem>                              
+                        </apex:pageBlockSection>
+
+                        <apex:pageBlockSection columns="1">
+                            <apex:pageBlockSectionItem id="account">
+                                <apex:outputLabel value="Case Reason: " styleClass="slds-form-element__label"/>
+                             </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem dataStyleClass="slds-form-element">
+                                <apex:selectList value="{!newCase.Reason}" styleClass="slds-input"/>
+                             </apex:pageBlockSectionItem>                              
+                        </apex:pageBlockSection>
+                </apex:panelGrid>
+                <apex:pageBlock>
+                   <apex:outputText value="Case Description" styleClass="slds-text-title_caps slds-text-heading_medium"/>
+                    <apex:panelGrid columns="1">                    
+                            <apex:pageBlockSection columns="1">
+                                <apex:pageBlockSectionItem id="contact">
+                                    <apex:outputLabel value="Subject: " styleClass="slds-form-element__label"/>
+                                 </apex:pageBlockSectionItem>
+                                <apex:pageBlockSectionItem dataStyleClass="slds-form-element">
+                                    <apex:inputField value="{!newCase.Subject}" styleClass="slds-input"/>
+                                 </apex:pageBlockSectionItem> 
+                            </apex:pageBlockSection>
+    
+                            <apex:pageBlockSection columns="1">
+                                <apex:pageBlockSectionItem id="account">
+                                    <apex:outputLabel value="Description: " styleClass="slds-form-element__label"/>
+                                 </apex:pageBlockSectionItem>
+                                <apex:pageBlockSectionItem dataStyleClass="slds-form-element">
+                                    <apex:inputTextarea value="{!newCase.Description}" styleClass="slds-input" cols="50" rows="5"/>
+                                 </apex:pageBlockSectionItem>                              
+                            </apex:pageBlockSection>
+                    </apex:panelGrid>
+                </apex:pageBlock>                
+            </apex:pageBlock>
+        </apex:form>
+    </div>    
+</apex:page>
