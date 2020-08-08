@@ -48,10 +48,12 @@ public with sharing class CreateTicketController {
             }
        }catch(System.NullPointerException e){}
         
-        /**/
+        
     }
 
-    // public Case getContact(){
-    //     return (this.newCase.ContactId.equals(''))? [Select ContactId from Case Limit 1] : [Select ContactId from Case Where ContactId = :this.newCase.ContactId];
-    // }
+    public void submit(){
+        if(!this.newCase.Subject.equals('') && !this.newCase.Description.equals('')){
+            insert this.newCase;
+        }
+    }
 }

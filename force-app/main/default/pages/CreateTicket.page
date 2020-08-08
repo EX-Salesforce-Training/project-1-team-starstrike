@@ -77,6 +77,9 @@
                                  </apex:pageBlockSectionItem>                              
                             </apex:pageBlockSection>
                     </apex:panelGrid>
+                    <apex:pageBlockButtons location="bottom">
+                        <apex:commandButton value="Submit" action="{!submit}" styleClass="slds-button slds-button_success"/>
+                    </apex:pageBlockButtons>
                 </apex:pageBlock>                
             </apex:pageBlock>
         </apex:form>
