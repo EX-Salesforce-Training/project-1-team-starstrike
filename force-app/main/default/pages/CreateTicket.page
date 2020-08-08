@@ -1,8 +1,8 @@
 <apex:page controller="CreateTicketController" lightningStylesheets="true">
-    <apex:slds/>
+    <apex:slds />
     <div class="slds-scope">
-        <apex:form>
-            <apex:pageBlock>
+        <apex:form >
+            <apex:pageBlock >
                 <apex:panelGrid columns="4">
                         <apex:pageBlockSection columns="1">
                             <apex:pageBlockSectionItem id="contact">
@@ -28,7 +28,9 @@
                                 <apex:outputLabel value="Type: " styleClass="slds-form-element__label"/>
                              </apex:pageBlockSectionItem>
                             <apex:pageBlockSectionItem dataStyleClass="slds-form-element">
-                                <apex:selectList value="{!newCase.Type}" styleClass="slds-input"/>
+                                <apex:selectList value="{!newCase.Type}" styleClass="slds-input" size="1">
+                                    <apex:selectOptions value="{!tList}"/>
+                                </apex:selectList>
                              </apex:pageBlockSectionItem> 
                         </apex:pageBlockSection>
 
@@ -37,7 +39,9 @@
                                 <apex:outputLabel value="Priority: " styleClass="slds-form-element__label"/>
                              </apex:pageBlockSectionItem>
                             <apex:pageBlockSectionItem dataStyleClass="slds-form-element">
-                                <apex:selectList value="{!newCase.Priority}" styleClass="slds-input"/>
+                                <apex:selectList value="{!newCase.Priority}" styleClass="slds-input" size="1">
+                                    <apex:selectOptions value="{!pList}"/>
+                                </apex:selectList>
                              </apex:pageBlockSectionItem>                              
                         </apex:pageBlockSection>
 
@@ -46,11 +50,13 @@
                                 <apex:outputLabel value="Case Reason: " styleClass="slds-form-element__label"/>
                              </apex:pageBlockSectionItem>
                             <apex:pageBlockSectionItem dataStyleClass="slds-form-element">
-                                <apex:selectList value="{!newCase.Reason}" styleClass="slds-input"/>
+                                <apex:selectList value="{!newCase.Reason}" styleClass="slds-input" size="1">
+                                    <apex:selectOptions value="{!rList}"/>
+                                </apex:selectList>                                    
                              </apex:pageBlockSectionItem>                              
                         </apex:pageBlockSection>
                 </apex:panelGrid>
-                <apex:pageBlock>
+                <apex:pageBlock >
                    <apex:outputText value="Case Description" styleClass="slds-text-title_caps slds-text-heading_medium"/>
                     <apex:panelGrid columns="1">                    
                             <apex:pageBlockSection columns="1">
