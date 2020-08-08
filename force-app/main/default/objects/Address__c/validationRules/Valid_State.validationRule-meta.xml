@@ -3,9 +3,8 @@
     <fullName>Valid_State</fullName>
     <active>true</active>
     <description>User must enter a two-letter state abbreviation</description>
-    <errorConditionFormula>IF( (Country__c = &quot;US&quot;  || Country__c = &quot;USA&quot; || ISBLANK(Country__c)),
-  IF( LEN(State__c)  &lt;&gt; 2, true, NOT(CONTAINS(&quot;AL:AK:AZ:AR:CA:CO:CT:DE:DC:FL:GA:HI:ID:IL:IN:IA:KS:KY:LA:ME:MD:MA:MI:MN:MS:MO:MT:NE:NV:NH:NJ:NM:NY:NC:ND:OH:OK:OR:PA:RI:SC:SD:TN:TX:UT:VT:VA:WA:WV:WI:WY&quot;, State__c)) ), 
- NOT(ISBLANK(State__c)) )</errorConditionFormula>
+    <errorConditionFormula>(Country__c = &quot;US&quot;  || Country__c = &quot;USA&quot; || ISBLANK(Country__c))
+&amp;&amp;(LEN(State__c)&lt;&gt; 2 &amp;&amp; NOT(CONTAINS(&quot;AL:AK:AZ:AR:CA:CO:CT:DE:DC:FL:GA:HI:ID:IL:IN:IA:KS:KY:LA:ME:MD:MA:MI:MN:MS:MO:MT:NE:NV:NH:NJ:NM:NY:NC:ND:OH:OK:OR:PA:RI:SC:SD:TN:TX:UT:VT:VA:WA:WV:WI:WY&quot;, State__c)) &amp;&amp; NOT(ISBLANK(State__c)))</errorConditionFormula>
     <errorDisplayField>State__c</errorDisplayField>
     <errorMessage>Please enter a valid two-letter state code.</errorMessage>
 </ValidationRule>
