@@ -3,13 +3,13 @@
     <div class="slds-scope">
         <apex:form >
             <apex:pageBlock >
-                <apex:panelGrid columns="4">
+                <apex:panelGrid columns="3">
                         <apex:pageBlockSection columns="1">
                             <apex:pageBlockSectionItem id="contact">
                                 <apex:outputLabel value="Contact Name: " styleClass="slds-form-element__label"/>
                              </apex:pageBlockSectionItem>
                             <apex:pageBlockSectionItem dataStyleClass="slds-form-element">
-                                <apex:inputField value="{!newCase.Contact.Name}" styleClass="slds-input" style="pointer-events:none;"/>
+                                <apex:inputField value="{!newCase.ContactId}" styleClass="slds-input" style="pointer-events:none;"/>
                              </apex:pageBlockSectionItem> 
                         </apex:pageBlockSection>
 
@@ -18,7 +18,7 @@
                                 <apex:outputLabel value="Account Name: " styleClass="slds-form-element__label"/>
                              </apex:pageBlockSectionItem>
                             <apex:pageBlockSectionItem dataStyleClass="slds-form-element">
-                                <apex:inputField value="{!newCase.Account.Name}" styleClass="slds-input" style="pointer-events:none;"/>
+                                <apex:inputField value="{!newCase.AccountId}" styleClass="slds-input" style="pointer-events:none;"/>
                              </apex:pageBlockSectionItem>                              
                         </apex:pageBlockSection>
                 </apex:panelGrid>
@@ -78,7 +78,7 @@
                             </apex:pageBlockSection>
                     </apex:panelGrid>
                     <apex:pageBlockButtons location="bottom">
-                        <apex:commandButton value="Submit" action="{!submit}" styleClass="slds-button slds-button_success"/>
+                        <apex:commandButton value="Submit" action="{!submit}" styleClass="slds-button slds-button_brand"/>
                     </apex:pageBlockButtons>
                 </apex:pageBlock>                
             </apex:pageBlock>
