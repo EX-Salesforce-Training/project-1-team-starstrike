@@ -48,9 +48,14 @@ public with sharing class CreateTicketController {
         
     }
 
-    public void submit(){
-        if(!this.newCase.Subject.equals('') && !this.newCase.Description.equals('')){
+    public pagereference submit(){
+        if(!this.newCase.Subject.equals('')){
             insert this.newCase;
+            //Reference to Case List Page
+            return (new ApexPages.StandardController(newCase)).view();
         }
+        Pagereference pag = new Pagereference('/'+ ApexPages.currentPage().getParameters().get('id'));
+        pag.setRedirect(true);
+        return pag;
     }
 }
