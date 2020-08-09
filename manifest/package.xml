@@ -17,8 +17,25 @@
         <name>CustomObject</name>
     </types>
     <types>
+        <members>StartStrike</members>
+        <members>StartStrike/StartStrike_logo</members>
+        <name>Document</name>
+    </types>
+    <types>
+		<members>*</members>
+		<name>Letterhead</name>
+	</types>
+    <types>
+        <members>unfiled$public/StartStrike_Template</members>
+        <name>EmailTemplate</name>
+    </types>
+    <types>
         <members>*</members>
         <name>Flow</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Workflow</name>
     </types>
     <types>
         <members>*</members>
