@@ -27,6 +27,8 @@
 	</types>
     <types>
         <members>unfiled$public/StartStrike_Template</members>
+        <members>unfiled$public/Insurance_Approved_Template</members>
+        <members>unfiled$public/Insurance_Denied_Template</members>
         <name>EmailTemplate</name>
     </types>
     <types>
@@ -35,7 +37,18 @@
     </types>
     <types>
         <members>*</members>
+        <members>Mail__c</members>
         <name>Workflow</name>
+    </types>
+    <types>
+        <members>Mail__c.Insurance_Approved</members>
+	    <members>Mail__c.Insurance_Denied</members>
+        <name>WorkflowAlert</name>
+    </types>
+    <types>
+        <members>Mail__c.Approve_Payout</members>
+	    <members>Mail__c.Deny_Payout</members>
+        <name>WorkflowFieldUpdate</name>
     </types>
     <types>
         <members>*</members>
@@ -44,6 +57,16 @@
     <types>
         <members>*</members>
         <name>Role</name>
+    </types>
+    <types>
+        <members>Insurance_Approvers</members>
+        <name>Queue</name>
+    </types>
+    <types>
+        <members>Automatic_Insurance</members>
+	    <members>Standard_Insurance</members>
+	    <members>Premium_Insurance</members>
+        <name>ApprovalProcess</name>
     </types>
     <types>
         <members>*</members>

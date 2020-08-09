@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <alerts>
+        <fullName>Insurance_Approved_Email</fullName>
+        <description>Insurance Approved Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Insurance_Approved_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Insurance_Denied_Email</fullName>
+        <description>Insurance Denied Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Insurance_Denied_Template</template>
+    </alerts>
+    <alerts>
         <fullName>Sent_A_Notification_When_A_Mail_is_Lost</fullName>
         <description>Sent A Notification When A Mail is Lost</description>
         <protected>false</protected>
@@ -10,6 +30,24 @@
         <senderType>CurrentUser</senderType>
         <template>unfiled$public/StartStrike_Template</template>
     </alerts>
+    <fieldUpdates>
+        <fullName>Approve_Payout</fullName>
+        <field>Payout_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Approve Payout</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Deny_Payout</fullName>
+        <field>Payout_Status__c</field>
+        <literalValue>Denied</literalValue>
+        <name>Deny Payout</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
     <rules>
         <fullName>Mail Lost</fullName>
         <actions>
