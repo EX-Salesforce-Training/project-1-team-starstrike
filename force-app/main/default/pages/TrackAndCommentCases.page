@@ -1,6 +1,6 @@
 <apex:page controller="TrackAndCommentCasesController" >
     <apex:form >
-    	<apex:pageBlock >
+        <apex:pageBlock >
             <apex:pageBlockButtons >
                 <apex:outputPanel id="buttons">
                     <apex:commandButton action="{!commentButton}" value="Add New Comment" rerender="table,buttons" rendered="{!defaultButton}" />

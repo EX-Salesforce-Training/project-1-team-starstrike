@@ -1,6 +1,6 @@
 <apex:page controller="PublicTrackingCodeController">
     <apex:form >
-    	<apex:pageBlock title="Tracking Information">
+        <apex:pageBlock title="Tracking Information">
             <apex:inputText value="{!mailCode}"/>
             <apex:commandButton action="{!SearchCode}" value="Search" rerender="infoSection" /><br />
             <apex:pageBlockSection columns="1" id="infoSection" >

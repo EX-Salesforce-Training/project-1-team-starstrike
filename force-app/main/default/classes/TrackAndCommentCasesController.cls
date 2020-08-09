@@ -7,7 +7,8 @@ public with sharing class TrackAndCommentCasesController {
         // Get necessary case fields and newest case comment
         caseList = new List<Wrapper>();
         for(Case c: [SELECT CaseNumber, Status, Reason, Description, Subject, Id, 
-                     (SELECT CommentBody, LastModifiedDate FROM CaseComments ORDER BY LastModifiedDate DESC LIMIT 1) FROM Case] ) {
+                     (SELECT CommentBody, LastModifiedDate FROM CaseComments ORDER BY LastModifiedDate DESC LIMIT 1) FROM Case 
+                    WHERE Status != 'Closed'] ) {
                          Wrapper temp = new Wrapper();
                          temp.cases = c;
 
@@ -61,7 +62,8 @@ public with sharing class TrackAndCommentCasesController {
         defaultButton = true;
         
         List<Case> updatedCases = [SELECT CaseNumber, Status, Reason, Description, Subject, Id, 
-                     (SELECT CommentBody, LastModifiedDate FROM CaseComments ORDER BY LastModifiedDate DESC LIMIT 1) FROM Case];
+                     (SELECT CommentBody, LastModifiedDate FROM CaseComments ORDER BY LastModifiedDate DESC LIMIT 1) FROM Case
+                                  WHERE Status != 'Closed'];
         for(Integer i=0; i<caseList.size(); i++) {
             caseList.get(i).cases = updatedCases.get(i);
             

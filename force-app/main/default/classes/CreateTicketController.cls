@@ -7,14 +7,13 @@ public with sharing class CreateTicketController {
 
     public CreateTicketController() {
         User usLogged = [Select ContactId From User Where Id = :UserInfo.getUserId()];
-        Contact cont = (usLogged.ContactId != null )? [Select Id, AccountId From Contact Where Id = :usLogged.ContactId] : new Contact();
+        Contact cont = [Select Id, AccountId From Contact Where Id = :usLogged.ContactId];
         this.newCase = new Case();
         this.newCase.Origin = 'Web';
         this.newCase.Status = 'New';
-        if(cont.Name != null)
-        this.newCase.ContactId = cont.Id;
-        this.newCase.AccountId = cont.AccountId;   
-        
+        	this.newCase.ContactId = cont.Id;
+        	this.newCase.AccountId = cont.AccountId;   
+    	      
         try{
            	tList = new List<SelectOption>();
             tList.add(new SelectOption('','--None--'));

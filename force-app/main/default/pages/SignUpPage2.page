@@ -1,0 +1,33 @@
+<!--
+/////////////////////////////////////////////////////////////////
+//
+// Name: Project 1 Sign Up Page 2
+// Author: Ian Workman (ianjworkman@gmail.com)
+// Date: 08/05/2020
+// Description: The second page for the signing up of
+// New Community users into our Salesforce Org.
+//
+/////////////////////////////////////////////////////////////////
+-->
+<apex:page controller="SignUpController">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockButtons >
+            	<apex:commandButton action="{!P2Previous}" value="Previous"/>
+                <apex:commandButton action="{!SaveUserAcc}" value="Save"/>
+            </apex:pageBlockButtons>
+        	<apex:pageBlockSection >
+                <apex:outputText value="Street:"/><br/>
+                <apex:inputField value="{!nu.Street}"/><br/><br/>
+                <apex:outputText value="City:"/><br/>
+                <apex:inputField value="{!nu.City}"/><br/><br/>
+                <apex:outputText value="State:"/><br/>
+                <apex:inputField value="{!nu.State}"/><br/><br/>
+                <apex:outputText value="Country:"/><br/>
+                <apex:inputField value="{!nu.Country}"/><br/><br/>
+                <apex:outputText value="Postal Code:"/><br/>
+                <apex:inputField value="{!nu.PostalCode}"/><br/><br/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

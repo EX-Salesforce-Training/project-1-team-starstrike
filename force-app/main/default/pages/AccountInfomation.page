@@ -127,7 +127,7 @@
             <apex:pageBlock >
                 <apex:pageBlockButtons location="bottom">
                         <apex:commandButton action="{!newAdd}" value="Add New Address" rendered="{!If(!disabled,true,false)}"/>
-                    	<apex:commandButton action="{!newAdd}" value="Cancel" rendered="{!If(disabled,true,false)}"/>
+                        <apex:commandButton action="{!newAdd}" value="Cancel" rendered="{!If(disabled,true,false)}"/>
                     </apex:pageBlockButtons> 
             </apex:pageBlock>
             <apex:pageBlock rendered="{!show}">
