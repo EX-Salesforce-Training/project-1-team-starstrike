@@ -16,7 +16,6 @@ public class UserAccountController {
             [Select Id, AccountId, Name, Phone, Email From Contact Where Id = :this.currentUser.ContactId]
             :new Contact();
        this.address = new Address__c();
-       this.account = (this.contact.AccountId != null)? [Select Name From Account Where Id = :this.contact.AccountId] : new Account();
                
        List<Contact_Address__c> acList = (this.contact.Name == null)? 
            [Select Address__r.Id From Contact_Address__c Where Contact__r.Id = :this.contact.Id]
