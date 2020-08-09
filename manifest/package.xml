@@ -63,9 +63,7 @@
         <name>Queue</name>
     </types>
     <types>
-        <members>Automatic_Insurance</members>
-	    <members>Standard_Insurance</members>
-	    <members>Premium_Insurance</members>
+        <members>*</members>
         <name>ApprovalProcess</name>
     </types>
     <types>
