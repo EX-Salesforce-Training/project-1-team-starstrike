@@ -25,4 +25,6 @@ Use a Visualforce page inside the community
   *	Ability to track and comment on open tickets. (3%)
   *	Ability to see past tickets. (5%)
 ## SALES CLOUD (Bonus)
-*	Implementation of sales cloud (10%)
+*	Implementation of sales cloud (10%) 
+
+*Merge atempt
