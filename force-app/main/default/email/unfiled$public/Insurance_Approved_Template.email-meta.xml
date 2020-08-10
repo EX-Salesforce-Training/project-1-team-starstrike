@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>StartStrike_LetterHead</letterhead>
+    <name>Insurance Approved Template</name>
+    <style>freeForm</style>
+    <subject>Insurance Approved</subject>
+    <textOnly>Congratulations, your insurance payout for your lost package has been approved!
+
+Mail Code: {!Mail__c.Id}
+Insurance Payout: {!Mail__c.Insurance_Value__c}
+
+
+-Starstrike Mail</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

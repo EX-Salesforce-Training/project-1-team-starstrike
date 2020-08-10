@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>StartStrike_LetterHead</letterhead>
+    <name>StartStrike Template</name>
+    <style>freeForm</style>
+    <subject>Mail Lost!!!</subject>
+    <textOnly>This is a notification for {!Mail__c.OwnerFullName}:
+
+Mail {!Mail__c.Name} with destination to {!Mail__c.Contact_Address__c.Contact__c.MailingAddress} has been lost.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>
