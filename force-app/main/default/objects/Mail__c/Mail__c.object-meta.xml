@@ -160,7 +160,13 @@
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Mail</pluralLabel>
-    <searchLayouts/>
+    <searchLayouts>
+        <searchResultsAdditionalFields>Delivery_Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Insured__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Payout_Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OWNER.ALIAS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Contact_Address__c</searchResultsAdditionalFields>
+    </searchLayouts>
     <sharingModel>Private</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

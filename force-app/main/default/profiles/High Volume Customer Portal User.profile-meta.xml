@@ -77,6 +77,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>MailDataFactory</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>MailListWrapperController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
