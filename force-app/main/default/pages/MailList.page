@@ -1,6 +1,6 @@
 <apex:page controller="MailListWrapperController">
     <apex:form >
-    	<apex:pageBlock >
+        <apex:pageBlock >
             <apex:pageBlockButtons >
                 <apex:commandButton action="{!RefreshView}" value="Show All" rerender="table" />
                 <apex:commandButton action="{!Shipping}" value="Currently Shipping" rerender="table" />
@@ -8,7 +8,7 @@
             </apex:pageBlockButtons>
             <apex:inputField value="{!sample.Delivery_Status__c}" />
             <apex:commandButton action="{!Filter}" value="Filter" rerender="table"/>            
-        	<apex:pageBlockTable value="{!mailList}" var="packages" id="table">
+            <apex:pageBlockTable value="{!mailList}" var="packages" id="table">
                 <apex:column value="{!packages.mail.Id}" headerValue="Tracking Code" />
                 <apex:column value="{!packages.mail.Delivery_Status__c}" />
                 <apex:column value="{!packages.addr.Address_Line_1__c}" />

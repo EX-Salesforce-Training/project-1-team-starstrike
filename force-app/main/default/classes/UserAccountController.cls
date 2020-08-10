@@ -11,69 +11,58 @@ public class UserAccountController {
     public Boolean hide{get;set;}
     
     public UserAccountController(){
-        this.currentUser = [Select Username, Email, Firstname, Lastname, Name, ContactId From User Where Id = :UserInfo.getUserId()];
-        this.contact = (this.currentUser.ContactId != null)? 
-            [Select Id, AccountId, Name, Phone, Email From Contact Where Id = :this.currentUser.ContactId]
-            :new Contact();
-       this.address = new Address__c();
-       this.account = (this.contact.AccountId != null)? [Select Name From Account Where Id = :this.contact.AccountId] : new Account();
-               
-       List<Contact_Address__c> acList = (this.contact.Name == null)? 
-           [Select Address__r.Id From Contact_Address__c Where Contact__r.Id = :this.contact.Id]
-           : new List<Contact_Address__c>();
+       currentUser = [Select Username, Email, Firstname, Lastname, Name, ContactId From User Where Id = :UserInfo.getUserId()];
+       contact = [Select Id, AccountId, Name, Phone, Email From Contact Where Id = :currentUser.ContactId];
+       address = new Address__c();       
+       List<Contact_Address__c> acList =  [Select Address__c From Contact_Address__c Where Contact__c = :contact.Id];
         
-        List<String> aListIds = new List<String>();
+        List<ID> aListIds = new List<ID>();
         if(acList.size() > 0){
             for( Contact_Address__c ca: acList){
-          		  aListIds.add(ca.Address__r.Id);
+          		  aListIds.add(ca.Address__c);
         	}
         }
        
-        this.addresses = (aListIds.size() > 0)?
-            [Select Name, Address_Line_1__c, Address_Line_2__c, City__c, Country__c, State__c, Postal_Zip_Code__c From Address__c Where Id in :aListIds]:
+        addresses = (aListIds.size() > 0)?
+            [Select Id, Name, Address_Line_1__c, Address_Line_2__c, City__c, Country__c, State__c, Postal_Zip_Code__c From Address__c Where Id in :aListIds]:
         	new List<Address__c>();
     	
-        this.disabled = false;
-        this.show = true;
-        this.hide = false;
+        disabled = false;
+        show = true;
+        hide = false;
     }
    
     
     public void edit(){
-         this.hide = !this.hide;
-         this.show = !this.show;
+         hide = !hide;
+         show = !show;
     }
 
     public void save(){
-        update this.currentUser;
-        if(this.addresses.size() > 0)
-            update this.addresses;    
+        update currentUser;
+       //if(this.addresses.size() > 0)
+        update addresses;    
             
-        this.hide = !this.hide;
-        this.show = !this.show;
+       hide = !hide;
+        show = !show;
     }
     
     public void newAdd(){
-        this.disabled = !this.disabled;
+        disabled = !disabled;
     }
     
     public void cancel(){
-       this.hide = !this.hide;
-        this.show = !this.show;
+       hide = !hide;
+        show = !show;
     }
 
   public void save2(){
-        if (this.contact.Id != null) {
-            if(this.address.Name != null){
-                this.addresses.add(this.address);
-                insert this.address;
-                Contact_Address__c ca = new Contact_Address__c();
-                ca.Name = this.contact.Name + '-' + this.address.Name;
-                ca.Contact__c = this.contact.Id;
-                ca.Address__c = this.address.Id;
-                insert ca;
-                this.disabled = !this.disabled;
-            } 
-        }       
+        insert address;
+        Contact_Address__c ca = new Contact_Address__c();
+        ca.Name = contact.Name + '-' + address.Name;
+        ca.Contact__c = contact.Id;
+        ca.Address__c = address.Id;
+        insert ca;
+        disabled = !disabled;
     }
 }
